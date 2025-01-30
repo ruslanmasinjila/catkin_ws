@@ -76,7 +76,6 @@ link6:
     x: 0
     y: -0.00704
     z: -0.00993
-    
 link7:
   inertia:
     ixx: 9.3e-05

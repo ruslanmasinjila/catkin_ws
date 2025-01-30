@@ -104,6 +104,11 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          link7:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           link_base:
             Alpha: 1
             Show Axes: false
@@ -193,6 +198,11 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          link7:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           link_base:
             Alpha: 1
             Show Axes: false
@@ -247,6 +257,11 @@ Visualization Manager:
           Show Trail: false
           Value: true
         link6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link7:
           Alpha: 1
           Show Axes: false
           Show Trail: false
