@@ -213,6 +213,7 @@
 
     <!-- ############### LINK 7 From openmanipulatorX ################### -->
     <!-- ############### The part below may need to be recalibrated ################### -->
+    <!-- ############### Link 7 Works. Parameters should be changed afterwords ################### -->
 
     <link name="${prefix}link7">
       <xacro:common_link_inertial 
