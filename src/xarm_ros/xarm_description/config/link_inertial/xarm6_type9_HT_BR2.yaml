@@ -75,7 +75,7 @@ link6:
   origin:
     x: 0.0
     y: -0.00194
-    z: -0.0102 
+    z: -0.0102
 link7:
   inertia:
     ixx: 7.726e-05

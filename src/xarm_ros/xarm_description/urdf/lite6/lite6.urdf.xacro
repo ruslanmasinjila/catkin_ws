@@ -7,7 +7,7 @@
     joint4_lower_limit:=${-2.0*pi}  joint4_upper_limit:=${2.0*pi}
     joint5_lower_limit:=${-2.1642}  joint5_upper_limit:=${2.1642}
     joint6_lower_limit:=${-2.0*pi}  joint6_upper_limit:=${2.0*pi}
-    joint7_lower_limit:=${0}  joint7_upper_limit:=${0}
+    joint7_lower_limit:=${-2.0*pi}  joint7_upper_limit:=${2.0*pi}
     model_num:=0
     inertial_params_filename:='' kinematics_params_filename:='' "
     >
@@ -211,9 +211,8 @@
       <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
-    <!-- ############### LINK 7 From openmanipulatorX ################### -->
-    <!-- ############### The part below may need to be recalibrated ################### -->
-    <!-- ############### Link 7 Works. Parameters should be changed afterwords ################### -->
+
+    <!--############ Attach openmanipulatorX link here-->
 
     <link name="${prefix}link7">
       <xacro:common_link_inertial 
