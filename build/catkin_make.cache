@@ -1,2 +1,2 @@
-
+lite6_omx
 -DCATKIN_DEVEL_PREFIX=/home/ruslan/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ruslan/catkin_ws/install -G Unix Makefiles
