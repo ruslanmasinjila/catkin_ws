@@ -31,10 +31,6 @@
       <selfCollide>true</selfCollide>
     </gazebo>
 
-    <gazebo reference="${prefix}link7">
-      <selfCollide>true</selfCollide>
-    </gazebo>
-
   </xacro:macro>
 
 </robot>
