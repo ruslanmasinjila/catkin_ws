@@ -26,18 +26,18 @@
     </xacro:unless>
   </xacro:macro>
   
-  <xacro:macro name="common_link_visual" params="mesh_filename add_mesh_suffix:=true material_name:='White' origin_xyz:='0 0 0' origin_rpy:='0 0 0' other_mesh_suffix:=''">
+  <xacro:macro name="common_link_visual" params="mesh_filename add_mesh_suffix:=true material_name:='White' origin_xyz:='0 0 0' origin_rpy:='0 0 0' other_mesh_suffix:='' scale:='1 1 1'">
     <visual>
       <geometry>
         <xacro:if value="${add_mesh_suffix}">
-          <mesh filename="${mesh_path}/${mesh_filename}.${mesh_suffix}"/>
+          <mesh filename="${mesh_path}/${mesh_filename}.${mesh_suffix}" scale="${scale}"/>
         </xacro:if>
         <xacro:unless value="${add_mesh_suffix}">
           <xacro:if value="${other_mesh_suffix != ''}">
-            <mesh filename="${mesh_path}/${mesh_filename}.${other_mesh_suffix}"/>
+            <mesh filename="${mesh_path}/${mesh_filename}.${other_mesh_suffix}" scale="${scale}"/>
           </xacro:if>
           <xacro:unless value="${other_mesh_suffix != ''}">
-            <mesh filename="${mesh_path}/${mesh_filename}"/>
+            <mesh filename="${mesh_path}/${mesh_filename}" scale="${scale}"/>
           </xacro:unless>
         </xacro:unless>
       </geometry>
@@ -46,18 +46,18 @@
     </visual>
   </xacro:macro>
   
-  <xacro:macro name="common_link_collision" params="mesh_filename add_mesh_suffix:=true origin_xyz:='0 0 0' origin_rpy:='0 0 0' other_mesh_suffix:=''">
+  <xacro:macro name="common_link_collision" params="mesh_filename add_mesh_suffix:=true origin_xyz:='0 0 0' origin_rpy:='0 0 0' other_mesh_suffix:='' scale:='1 1 1'">
     <collision>
       <geometry>
         <xacro:if value="${add_mesh_suffix}">
-          <mesh filename="${mesh_path}/${mesh_filename}.${mesh_suffix}"/>
+          <mesh filename="${mesh_path}/${mesh_filename}.${mesh_suffix}" scale="${scale}"/>
         </xacro:if>
         <xacro:unless value="${add_mesh_suffix}">
           <xacro:if value="${other_mesh_suffix != ''}">
-            <mesh filename="${mesh_path}/${mesh_filename}.${other_mesh_suffix}"/>
+            <mesh filename="${mesh_path}/${mesh_filename}.${other_mesh_suffix}" scale="${scale}"/>
           </xacro:if>
           <xacro:unless value="${other_mesh_suffix != ''}">
-            <mesh filename="${mesh_path}/${mesh_filename}"/>
+            <mesh filename="${mesh_path}/${mesh_filename}" scale="${scale}"/>
           </xacro:unless>
         </xacro:unless>
       </geometry>
