@@ -12,23 +12,23 @@
     
     <!-- ########################### GRIPPER BASE ########################### -->
     <link name="${prefix}uflite_gripper_link">
-      <inertial>
-        <origin xyz="0.0 0.0 0.030" rpy="0 0 0" />
-        <mass value="0.28" />
-        <inertia
-          ixx="0.00047106" ixy="3.9292E-07" ixz="2.6537E-06"
-          iyy="0.00033072" iyz="-1.0975E-05" izz="0.00025642" />
+       <inertial>
+        <origin xyz="4.4206755e-02 3.6839985e-07 8.9142216e-03" />
+        <mass value="1.4327573e-01" />
+        <inertia ixx="8.0870749e-05" ixy="0.0" ixz="-1.0157896e-06"
+                 iyy="7.5980465e-05" iyz="0.0"
+                 izz="9.3127351e-05" />
       </inertial>
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_base"
         origin_xyz="0 0 0" 
-        origin_rpy="0 0 0"
+        origin_rpy="0 -1.5708 0"
         material_name="${prefix}White"
         scale = '0.001 0.001 0.001' />
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_base"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 0 0" 
+        origin_rpy="0 -1.5708  0" 
         scale = '0.001 0.001 0.001' />
     </link>
     
@@ -44,13 +44,13 @@
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_left_finger"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 0 0"
+        origin_rpy="0 -1.5708 0"
         material_name="${prefix}White" 
         scale = '0.001 0.001 0.001' />
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_left_finger"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 0 0" 
+        origin_rpy="0 -1.5708 0" 
         scale = '0.001 0.001 0.001'/>
     </link>
     <joint name="${prefix}left_finger_joint" type="prismatic">
@@ -76,13 +76,13 @@
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_right_finger"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 0 0"
+        origin_rpy="0 -1.5708  0"
         material_name="${prefix}White" 
         scale = '0.001 0.001 0.001' />
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_right_finger"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 0 0" 
+        origin_rpy="0 -1.5708  0" 
         scale = '0.001 0.001 0.001' />
     </link>
     <joint name="${prefix}right_finger_joint" type="prismatic">
