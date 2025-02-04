@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro" name="uflite_gripper">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="omx_gripper">
   <xacro:macro name="uflite_gripper_urdf" params="prefix:='' attach_to:='' attach_xyz:='0 0 0' attach_rpy:='0 0 0' ">
     
     <xacro:unless value="${attach_to == ''}">
       <joint name="${prefix}gripper_fix" type="fixed">
         <parent link="${attach_to}"/>
-        <child link="${prefix}uflite_gripper_link"/>
+        <child link="${prefix}omx_gripper_base"/>
         <origin xyz="${attach_xyz}" rpy="${attach_rpy}"/>
       </joint>
     </xacro:unless>
     
-    <link name="${prefix}uflite_gripper_link">
+    <link name="${prefix}omx_gripper_base">
       <inertial>
         <origin xyz="0.0 0.0 0.030" rpy="0 0 0" />
         <mass value="0.28" />
@@ -19,7 +19,7 @@
           iyy="0.00033072" iyz="-1.0975E-05" izz="0.00025642" />
       </inertial>
       <xacro:common_link_visual 
-        mesh_filename="gripper/lite/visual/omx_gripper_base"  
+        mesh_filename="gripper/lite/visual/omx_gripper_base"
         origin_xyz="0 0 0" 
         origin_rpy="0 0 0"
         material_name="${prefix}White" />
@@ -29,7 +29,7 @@
         origin_rpy="0 0 0" />
     </link>
     
-  <link name="${prefix}bio_gripper_left_finger">
+    <link name="${prefix}bio_gripper_left_finger">
       <inertial>
         <origin xyz="0.021846 -0.0276 0.011911" rpy="0 0 0" />
         <mass value="0.012105" />
@@ -49,7 +49,7 @@
     </link>
     <joint name="${prefix}left_finger_joint" type="prismatic">
       <origin xyz="0.059 0 0.027" rpy="0 0 0" />
-      <parent link="${prefix}uflite_gripper_link" />
+      <parent link="${prefix}omx_gripper_base" />
       <child link="${prefix}bio_gripper_left_finger" />
       <axis xyz="0 1 0" />
       <limit lower="-0.04" upper="0.0" effort="2.0" velocity="0.1" />
@@ -76,7 +76,7 @@
     </link>
     <joint name="${prefix}right_finger_joint" type="prismatic">
       <origin xyz="0.059 0 0.027" rpy="0 0 0" />
-      <parent link="${prefix}uflite_gripper_link" />
+      <parent link="${prefix}omx_gripper_base" />
       <child link="${prefix}bio_gripper_right_finger" />
       <axis xyz="0 1 0" />
       <limit lower="0" upper="0.04" effort="2.0" velocity="0.1" />
@@ -86,7 +86,7 @@
 
     <joint name="${prefix}joint_tcp" type="fixed">
       <origin xyz="0 0 0.0836" rpy="0 0 0" />
-      <parent link="${prefix}uflite_gripper_link" />
+      <parent link="${prefix}omx_gripper_base" />
       <child link="${prefix}link_tcp" />
     </joint>
 
