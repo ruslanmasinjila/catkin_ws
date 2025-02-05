@@ -54,7 +54,7 @@
         scale = '0.001 0.001 0.001'/>
     </link>
     <joint name="${prefix}left_finger_joint" type="prismatic">
-      <origin xyz="0.0817 0.021 0.0" rpy="0 0 0"/>
+      <origin xyz="0.0 0.021 0.0817" rpy="0 0 0"/>
       <parent link="${prefix}uflite_gripper_link" />
       <child link="${prefix}omx_gripper_left_finger_link" />
       <axis xyz="0 1 0" />
@@ -86,7 +86,7 @@
         scale = '0.001 0.001 0.001' />
     </link>
     <joint name="${prefix}right_finger_joint" type="prismatic">
-      <origin xyz="0.0817 -0.021 0" rpy="0 0 0"/>
+      <origin xyz="0.0 -0.021 0.0817" rpy="0 0 0"/>
       <parent link="${prefix}uflite_gripper_link" />
       <child link="${prefix}omx_gripper_right_finger_link" />
       <axis xyz="0 -1 0"/>
