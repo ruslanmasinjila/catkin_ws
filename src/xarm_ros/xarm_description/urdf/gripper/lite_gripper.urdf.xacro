@@ -28,7 +28,7 @@
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_base"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 -1.5708  0" 
+        origin_rpy="0 0 0" 
         scale = '0.001 0.001 0.001' />
     </link>
     
