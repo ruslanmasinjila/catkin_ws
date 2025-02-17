@@ -22,13 +22,13 @@
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_base"
         origin_xyz="0 0 0" 
-        origin_rpy="0 -1.5708 3.14159"
+        origin_rpy="0 -1.5708 0"
         material_name="${prefix}White"
         scale = '0.001 0.001 0.001' />
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_base"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 -1.5708  3.14159" 
+        origin_rpy="0 -1.5708  0" 
         scale = '0.001 0.001 0.001' />
     </link>
     
@@ -44,17 +44,17 @@
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_left_finger"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 -1.5708 0"
+        origin_rpy="0 0 0"
         material_name="${prefix}White" 
         scale = '0.001 0.001 0.001' />
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_left_finger"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 -1.5708 0" 
+        origin_rpy="0 0 0" 
         scale = '0.001 0.001 0.001'/>
     </link>
     <joint name="${prefix}left_finger_joint" type="prismatic">
-      <origin xyz="0.0 0.021 0.0817" rpy="0 0 0"/>
+      <origin xyz="0.0817 0.021 0.0" rpy="0 0 0"/>
       <parent link="${prefix}uflite_gripper_link" />
       <child link="${prefix}omx_gripper_left_finger_link" />
       <axis xyz="0 1 0" />
@@ -76,17 +76,17 @@
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_right_finger"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 -1.5708  0"
+        origin_rpy="0 0 0"
         material_name="${prefix}White" 
         scale = '0.001 0.001 0.001' />
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_right_finger"  
         origin_xyz="0 0 0" 
-        origin_rpy="0 -1.5708  0" 
+        origin_rpy="0 0 0" 
         scale = '0.001 0.001 0.001' />
     </link>
     <joint name="${prefix}right_finger_joint" type="prismatic">
-      <origin xyz="0.0 -0.021 0.0817" rpy="0 0 0"/>
+      <origin xyz="0.0817 -0.021 0" rpy="0 0 0"/>
       <parent link="${prefix}uflite_gripper_link" />
       <child link="${prefix}omx_gripper_right_finger_link" />
       <axis xyz="0 -1 0"/>
