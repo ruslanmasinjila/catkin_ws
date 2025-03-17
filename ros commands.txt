@@ -5,3 +5,6 @@ source ~/catkin_ws/devel/setup.bash
 # Moveit! Example. 
 # Graphical control interface + Rviz visual simulation:
 roslaunch uf_robot_moveit_config lite6_moveit_fake.launch add_gripper:=true
+
+# Echo clicked Locations in rviz
+rostopic echo /clicked_point
