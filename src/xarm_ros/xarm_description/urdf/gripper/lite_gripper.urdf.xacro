@@ -23,7 +23,7 @@
       <!-- Coupler Visual -->
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/coupler" 
-        origin_xyz="0 0 0.022" 
+        origin_xyz="0 0 0.01491" 
         origin_rpy="0 -3.14159 0" 
         material_name="${prefix}White"
         scale='0.001 0.001 0.001' />
@@ -31,14 +31,14 @@
       <!-- Coupler Collision -->
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/coupler" 
-        origin_xyz="0 0 0.022" 
+        origin_xyz="0 0 0.01491" 
         origin_rpy="0 -3.14159 0" 
         scale="0.001 0.001 0.001" />
 
       <!-- Gripper Base Visual -->
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_base"
-        origin_xyz="0 0 0" 
+        origin_xyz="0 0 -0.08810" 
         origin_rpy="0 -1.5708 0"
         material_name="${prefix}White"
         scale="1 1 1" />
@@ -46,7 +46,7 @@
       <!-- Gripper Base Collision -->
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_base"  
-        origin_xyz="0 0 0" 
+        origin_xyz="0 0 -0.08810" 
         origin_rpy="0 0 0" 
         scale="1 1 1" />
     </link>
