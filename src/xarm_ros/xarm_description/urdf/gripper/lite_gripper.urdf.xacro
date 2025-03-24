@@ -19,6 +19,8 @@
                  iyy="1.0e-06" iyz="0.0"
                  izz="1.0e-06" />
       </inertial>
+      
+      <!-- ########################### COUPLER  ########################### -->
 
       <!-- Coupler Visual -->
       <xacro:common_link_visual 
@@ -34,11 +36,13 @@
         origin_xyz="0 0 0.01491" 
         origin_rpy="0 -3.14159 0" 
         scale="0.001 0.001 0.001" />
+        
+       <!-- ########################### BASE LINK  ########################### -->
 
       <!-- Gripper Base Visual -->
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_base"
-        origin_xyz="0 0 -0.1281" 
+        origin_xyz="0.21 0 -0.1491" 
         origin_rpy="0 -1.5708 0"
         material_name="${prefix}White"
         scale="1 1 1" />
@@ -46,7 +50,7 @@
       <!-- Gripper Base Collision -->
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_base"  
-        origin_xyz="0 0 -0.1281" 
+        origin_xyz="0.21 0 -0.1491" 
         origin_rpy="0 0 0" 
         scale="1 1 1" />
     </link>
