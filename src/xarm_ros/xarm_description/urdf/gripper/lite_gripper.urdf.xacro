@@ -55,7 +55,7 @@
       <!-- Gripper Base Visual -->
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_base"
-        origin_xyz="0.21 0 -0.145" 
+        origin_xyz="0.2101 0 -0.145" 
         origin_rpy="0 -1.5708 0"
         material_name="${prefix}White"
         scale="1 1 1" />
@@ -63,7 +63,7 @@
       <!-- Gripper Base Collision -->
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_base"  
-        origin_xyz="0.21 0 -0.145" 
+        origin_xyz="0.2101 0 -0.145" 
         origin_rpy="0 -1.5708 0" 
         scale="1 1 1" />
     </link>
