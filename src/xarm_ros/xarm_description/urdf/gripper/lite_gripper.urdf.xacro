@@ -11,25 +11,26 @@
     </xacro:unless>
     
     <!-- ########################### COUPLER SEPARATE LINK ########################### -->
+      
     <link name="${prefix}uflite_gripper_coupler_link">
       <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="1.0e-03" />
-        <inertia ixx="1.0e-06" ixy="0.0" ixz="0.0"
-                 iyy="1.0e-06" iyz="0.0"
-                 izz="1.0e-06" />
+        <origin xyz="0.0 0.0 0.030" rpy="0 0 0" />
+        <mass value="0.28" />
+        <inertia
+          ixx="0.00047106" ixy="3.9292E-07" ixz="2.6537E-06"
+          iyy="0.00033072" iyz="-1.0975E-05" izz="0.00025642" />
       </inertial>
 
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/coupler" 
-        origin_xyz="0 0 0.025" 
+        origin_xyz="0 0 0.015" 
         origin_rpy="0 -3.14159 0" 
         material_name="${prefix}White"
         scale='0.001 0.001 0.001' />
 
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/coupler" 
-        origin_xyz="0 0 0.025" 
+        origin_xyz="0 0 0.015" 
         origin_rpy="0 -3.14159 0" 
         scale="0.001 0.001 0.001" />
     </link>
@@ -70,7 +71,7 @@
     <!-- ########################### LEFT FINGER ########################### -->
     <link name="${prefix}omx_gripper_left_finger_link">
       <inertial>
-        <origin xyz="0 0 -0.0191" rpy="0 0 0" />
+        <origin xyz="0 0 0.5" rpy="0 0 0" />
         <mass value="1.0e-03" />
         <inertia ixx="1.0e-06" ixy="0.0" ixz="0.0"
                  iyy="1.0e-06" iyz="0.0"
@@ -79,13 +80,13 @@
 
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_left_finger"  
-        origin_xyz="0 0 -0.0191" 
+        origin_xyz="0 0 0.5" 
         origin_rpy="0 -1.5708 0"
         material_name="${prefix}White" 
         scale = '0.001 0.001 0.001' />
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_left_finger"  
-        origin_xyz="0 0 -0.0191" 
+        origin_xyz="0 0 0.5" 
         origin_rpy="0 -1.5708 0" 
         scale = '0.001 0.001 0.001'/>
     </link>
@@ -103,7 +104,7 @@
     <!-- ########################### RIGHT FINGER ########################### -->
     <link name="${prefix}omx_gripper_right_finger_link">
       <inertial>
-        <origin xyz="0 0 -0.0191" rpy="0 0 0" />
+        <origin xyz="0 0 0.5" rpy="0 0 0" />
         <mass value="1.0e-03" />
         <inertia ixx="1.0e-06" ixy="0.0" ixz="0.0"
                  iyy="1.0e-06" iyz="0.0"
@@ -112,13 +113,13 @@
 
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_right_finger"  
-        origin_xyz="0 0 -0.0191" 
+        origin_xyz="0 0 0.5" 
         origin_rpy="0 -1.5708  0"
         material_name="${prefix}White" 
         scale = '0.001 0.001 0.001' />
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_right_finger"  
-        origin_xyz="0 0 -0.0191" 
+        origin_xyz="0 0 0.5" 
         origin_rpy="0 -1.5708  0" 
         scale = '0.001 0.001 0.001' />
     </link>
