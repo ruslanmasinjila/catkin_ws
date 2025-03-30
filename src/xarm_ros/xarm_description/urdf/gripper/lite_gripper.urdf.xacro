@@ -9,8 +9,8 @@
         <origin xyz="${attach_xyz}" rpy="${attach_rpy}"/>
       </joint>
     </xacro:unless>
-    
-    <!-- ########################### GRIPPER BASE ########################### -->
+
+    <!-- ########################### MAIN GRIPPER BASE LINK ########################### -->
     <link name="${prefix}uflite_gripper_link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0" />
@@ -19,25 +19,6 @@
                  iyy="1.0e-06" iyz="0.0"
                  izz="1.0e-06" />
       </inertial>
-      
-      <!-- ########################### COUPLER  ########################### -->
-
-      <!-- Coupler Visual -->
-      <xacro:common_link_visual 
-        mesh_filename="gripper/omx/visual/coupler" 
-        origin_xyz="0 0 0.01491" 
-        origin_rpy="0 -3.14159 0" 
-        material_name="${prefix}White"
-        scale='0.001 0.001 0.001' />
-
-      <!-- Coupler Collision -->
-      <xacro:common_link_collision 
-        mesh_filename="gripper/omx/collision/coupler" 
-        origin_xyz="0 0 0.01491" 
-        origin_rpy="0 -3.14159 0" 
-        scale="0.001 0.001 0.001" />
-        
-       <!-- ########################### BASE LINK  ########################### -->
 
       <!-- Gripper Base Visual -->
       <xacro:common_link_visual 
@@ -54,7 +35,37 @@
         origin_rpy="0 -1.5708 0" 
         scale="1 1 1" />
     </link>
-        
+
+    <!-- ########################### COUPLER SEPARATE LINK ########################### -->
+    <link name="${prefix}uflite_gripper_coupler_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="1.0e-03" />
+        <inertia ixx="1.0e-06" ixy="0.0" ixz="0.0"
+                 iyy="1.0e-06" iyz="0.0"
+                 izz="1.0e-06" />
+      </inertial>
+
+      <xacro:common_link_visual 
+        mesh_filename="gripper/omx/visual/coupler" 
+        origin_xyz="0 0 0.01491" 
+        origin_rpy="0 -3.14159 0" 
+        material_name="${prefix}White"
+        scale='0.001 0.001 0.001' />
+
+      <xacro:common_link_collision 
+        mesh_filename="gripper/omx/collision/coupler" 
+        origin_xyz="0 0 0.01491" 
+        origin_rpy="0 -3.14159 0" 
+        scale="0.001 0.001 0.001" />
+    </link>
+
+    <joint name="${prefix}gripper_coupler_fixed" type="fixed">
+      <parent link="${prefix}uflite_gripper_link" />
+      <child link="${prefix}uflite_gripper_coupler_link" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
     <!-- ########################### LEFT FINGER ########################### -->
     <link name="${prefix}omx_gripper_left_finger_link">
       <inertial>
@@ -64,6 +75,7 @@
                  iyy="1.0e-06" iyz="0.0"
                  izz="1.0e-06" />
       </inertial>
+
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_left_finger"  
         origin_xyz="0 0 -0.0191" 
@@ -76,6 +88,7 @@
         origin_rpy="0 -1.5708 0" 
         scale = '0.001 0.001 0.001'/>
     </link>
+
     <joint name="${prefix}left_finger_joint" type="prismatic">
       <origin xyz="0.0 0.021 0.0817" rpy="0 0 0"/>
       <parent link="${prefix}uflite_gripper_link" />
@@ -85,8 +98,7 @@
       <mimic joint="${prefix}right_finger_joint" multiplier="-1" offset="0" />
       <dynamics damping="0.1"/>
     </joint>
-    
-    
+
     <!-- ########################### RIGHT FINGER ########################### -->
     <link name="${prefix}omx_gripper_right_finger_link">
       <inertial>
@@ -96,6 +108,7 @@
                  iyy="1.0e-06" iyz="0.0"
                  izz="1.0e-06" />
       </inertial>
+
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_right_finger"  
         origin_xyz="0 0 -0.0191" 
@@ -108,6 +121,7 @@
         origin_rpy="0 -1.5708  0" 
         scale = '0.001 0.001 0.001' />
     </link>
+
     <joint name="${prefix}right_finger_joint" type="prismatic">
       <origin xyz="0.0 -0.021 0.0817" rpy="0 0 0"/>
       <parent link="${prefix}uflite_gripper_link" />
@@ -115,9 +129,9 @@
       <axis xyz="0 -1 0"/>
       <limit velocity="4.8" effort="1" lower="-0.010" upper="0.019" />
       <dynamics damping="0.1"/>
-      
     </joint>
 
+    <!-- ########################### TCP ########################### -->
     <link name="${prefix}link_tcp" />
 
     <joint name="${prefix}joint_tcp" type="fixed">
@@ -127,5 +141,5 @@
     </joint>
 
   </xacro:macro>
-
 </robot>
+
