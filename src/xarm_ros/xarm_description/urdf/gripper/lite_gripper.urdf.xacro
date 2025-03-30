@@ -9,6 +9,37 @@
         <origin xyz="${attach_xyz}" rpy="${attach_rpy}"/>
       </joint>
     </xacro:unless>
+    
+    <!-- ########################### COUPLER SEPARATE LINK ########################### -->
+    <link name="${prefix}uflite_gripper_coupler_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <mass value="1.0e-03" />
+        <inertia ixx="1.0e-06" ixy="0.0" ixz="0.0"
+                 iyy="1.0e-06" iyz="0.0"
+                 izz="1.0e-06" />
+      </inertial>
+
+      <xacro:common_link_visual 
+        mesh_filename="gripper/omx/visual/coupler" 
+        origin_xyz="0 0 0.015" 
+        origin_rpy="0 -3.14159 0" 
+        material_name="${prefix}White"
+        scale='0.001 0.001 0.001' />
+
+      <xacro:common_link_collision 
+        mesh_filename="gripper/omx/collision/coupler" 
+        origin_xyz="0 0 0.015" 
+        origin_rpy="0 -3.14159 0" 
+        scale="0.001 0.001 0.001" />
+    </link>
+
+    <joint name="${prefix}gripper_coupler_fixed" type="fixed">
+      <parent link="${prefix}uflite_gripper_link" />
+      <child link="${prefix}uflite_gripper_coupler_link" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </joint>
+
 
     <!-- ########################### MAIN GRIPPER BASE LINK ########################### -->
     <link name="${prefix}uflite_gripper_link">
@@ -36,35 +67,6 @@
         scale="1 1 1" />
     </link>
 
-    <!-- ########################### COUPLER SEPARATE LINK ########################### -->
-    <link name="${prefix}uflite_gripper_coupler_link">
-      <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0" />
-        <mass value="1.0e-03" />
-        <inertia ixx="1.0e-06" ixy="0.0" ixz="0.0"
-                 iyy="1.0e-06" iyz="0.0"
-                 izz="1.0e-06" />
-      </inertial>
-
-      <xacro:common_link_visual 
-        mesh_filename="gripper/omx/visual/coupler" 
-        origin_xyz="0 0 0.01491" 
-        origin_rpy="0 -3.14159 0" 
-        material_name="${prefix}White"
-        scale='0.001 0.001 0.001' />
-
-      <xacro:common_link_collision 
-        mesh_filename="gripper/omx/collision/coupler" 
-        origin_xyz="0 0 0.01491" 
-        origin_rpy="0 -3.14159 0" 
-        scale="0.001 0.001 0.001" />
-    </link>
-
-    <joint name="${prefix}gripper_coupler_fixed" type="fixed">
-      <parent link="${prefix}uflite_gripper_link" />
-      <child link="${prefix}uflite_gripper_coupler_link" />
-      <origin xyz="0 0 0" rpy="0 0 0" />
-    </joint>
 
     <!-- ########################### LEFT FINGER ########################### -->
     <link name="${prefix}omx_gripper_left_finger_link">
