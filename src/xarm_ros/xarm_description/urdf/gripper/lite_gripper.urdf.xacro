@@ -14,7 +14,7 @@
       
     <link name="${prefix}uflite_gripper_coupler_link">
       <inertial>
-        <origin xyz="0.0 0.0 0.030" rpy="0 0 0" />
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
         <mass value="0.28" />
         <inertia
           ixx="0.00047106" ixy="3.9292E-07" ixz="2.6537E-06"
@@ -45,7 +45,7 @@
     <!-- ########################### MAIN GRIPPER BASE LINK ########################### -->
     <link name="${prefix}uflite_gripper_link">
       <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 -0.141" rpy="0 0 0" />
         <mass value="1.0e-03" />
         <inertia ixx="1.0e-06" ixy="0.0" ixz="0.0"
                  iyy="1.0e-06" iyz="0.0"
@@ -55,7 +55,7 @@
       <!-- Gripper Base Visual -->
       <xacro:common_link_visual 
         mesh_filename="gripper/omx/visual/omx_gripper_base"
-        origin_xyz="0.2101 0 0.3" 
+        origin_xyz="0.2101 0 -0.141" 
         origin_rpy="0 -1.5708 0"
         material_name="${prefix}White"
         scale="1 1 1" />
@@ -63,7 +63,7 @@
       <!-- Gripper Base Collision -->
       <xacro:common_link_collision 
         mesh_filename="gripper/omx/collision/omx_gripper_base"  
-        origin_xyz="0.2101 0 0.3" 
+        origin_xyz="0.2101 0 -0.141" 
         origin_rpy="0 -1.5708 0" 
         scale="1 1 1" />
     </link>
