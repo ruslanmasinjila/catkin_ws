@@ -84,11 +84,12 @@
         origin_rpy="0 -1.5708 0"
         material_name="${prefix}White" 
         scale = '0.001 0.001 0.001' />
-      <xacro:common_link_collision 
-        mesh_filename="gripper/omx/collision/omx_gripper_left_finger"  
-        origin_xyz="0 0 0.0030" 
-        origin_rpy="0 -1.5708 0" 
-        scale = '0.001 0.001 0.001'/>
+        <collision>
+          <origin xyz="0 0 0.0030" rpy="0 -1.5708 0"/>
+          <geometry>
+            <box size="0.015 0.0200 0.058"/>
+          </geometry>
+        </collision>
     </link>
 
     <joint name="${prefix}left_finger_joint" type="prismatic">
@@ -117,11 +118,15 @@
         origin_rpy="0 -1.5708  0"
         material_name="${prefix}White" 
         scale = '0.001 0.001 0.001' />
-      <xacro:common_link_collision 
-        mesh_filename="gripper/omx/collision/omx_gripper_right_finger"  
-        origin_xyz="0 0 0.0030" 
-        origin_rpy="0 -1.5708  0" 
-        scale = '0.001 0.001 0.001' />
+
+        
+        <collision>
+          <origin xyz="0 0 0.0030" rpy="0 -1.5708 0"/>
+          <geometry>
+            <box size="0.015 0.0200 0.058"/>
+          </geometry>
+        </collision>
+
     </link>
 
     <joint name="${prefix}right_finger_joint" type="prismatic">
